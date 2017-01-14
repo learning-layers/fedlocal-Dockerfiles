@@ -1,0 +1,14 @@
+fedlocal:
+    container_name: fedlocal
+    image: learninglayers/fedlocal
+    ports: 
+        - "8080/tcp:80/tcp"
+        - "9011/tcp:9011/tcp"
+        - "9011/udp:9011/udp"
+    env_file:
+        - common.env
+
+#fedlocalfrontend:
+#    container_name: fedlocalfrontend
+#    image: learninglayers/fedlocalfrontend
+#    link: 
