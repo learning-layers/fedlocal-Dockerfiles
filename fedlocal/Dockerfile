@@ -12,8 +12,7 @@ RUN wget http://layers.dbis.rwth-aachen.de/jenkins/job/las2peer-Demo-Service/las
 
 WORKDIR /opt/las2peer-fedremote
 
-# expose las2peer WebConnector & bootstrap port 
-EXPOSE 8080/tcp
+# expose las2peer WebConnector & bootstrap port
 EXPOSE 9012/tcp
 EXPOSE 9012/udp
 
@@ -24,7 +23,7 @@ RUN chmod +x ./bin/*.sh \
 # for some reason, Jenkins delivers las2peer start scripts in DOS format, so d2u them...
 && apt-get install dos2unix -yq && dos2unix ./bin/*.sh \
 # for some reason, Jenkins delivers start script with params "interactive", "uploadStartupDirectory" so remove these...
-&& sed -i "s#interactive##g;s#uploadStartupDirectory##g" ./bin/connect_network.sh \
+&& sed -i "s#interactive##g;s#uploadStartupDirectory##g;s#startWebConnector##g" ./bin/connect_network.sh \
 && sed -i "s#134.61.172.204#fed#g" ./bin/connect_network.sh
 
 COPY run.sh run.sh
