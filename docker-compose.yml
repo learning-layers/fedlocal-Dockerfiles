@@ -1,18 +1,12 @@
-fedremote:
-    container_name: fedremote
-    image: learninglayers/fedremote
-    ports: 
-        - "9011/tcp:9011/tcp"
-        - "9011/udp:9011/udp"
 fedlocal:
     container_name: fedlocal
     image: learninglayers/fedlocal
-    ports: 
-        - "8080/tcp:80/tcp"
-        - "9012/tcp:9012/tcp"
-        - "9012/udp:9012/udp"
+    expose: 
+        - "8080"
+        - "9012/tcp"
+        - "9012/udp"
     links:
-        - fedremote
+        - fed
 
 #fedlocalfrontend:
 #    container_name: fedlocalfrontend
