@@ -8,7 +8,8 @@ fedlocal:
     links:
         - fed
 
-#fedlocalfrontend:
-#    container_name: fedlocalfrontend
-#    image: learninglayers/fedlocalfrontend
-#    link: 
+fedlocalfrontend:
+    container_name: fedlocalfrontend
+    image: learninglayers/fedlocalfrontend
+    links:
+	- fed
