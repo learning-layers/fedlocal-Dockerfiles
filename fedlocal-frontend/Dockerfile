@@ -32,7 +32,3 @@ RUN wget http://layers.dbis.rwth-aachen.de/jenkins/job/las2peer-Demo-Service/las
 && rm archive.zip \
 && cp -R archive/frontend/* /usr/share/nginx/html \
 && rm -rf archive
-
-
-
-
