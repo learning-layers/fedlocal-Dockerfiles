@@ -1,15 +1,11 @@
 fedlocal:
     container_name: fedlocal
     image: learninglayers/fedlocal
-    expose: 
+    expose:
         - "8080"
         - "9012/tcp"
         - "9012/udp"
-    links:
-        - fed
 
 fedlocalfrontend:
     container_name: fedlocalfrontend
     image: learninglayers/fedlocalfrontend
-    links:
-	- fed
